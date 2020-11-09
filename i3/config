@@ -30,6 +30,7 @@ floating_modifier $mod
 bindsym $mod+Return exec gnome-terminal
 bindsym $mod+x exec "nemo ."
 bindsym $mod+g exec google-chrome-stable
+bindsym $mod+Shift+f exec firefox -private
 bindsym $mod+w exec "/usr/local/bin/winbox"
 # kill focused window
 bindsym $mod+Shift+q kill
