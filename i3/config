@@ -30,7 +30,7 @@ floating_modifier $mod
 bindsym $mod+Return exec gnome-terminal
 bindsym $mod+x exec "nemo ."
 bindsym $mod+g exec google-chrome-stable
-bindsym $mod+Shift+f exec "firefox -private"
+bindsym $mod+Shift+f exec "firefox -private
 bindsym $mod+w exec "/usr/local/bin/winbox"
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -61,7 +61,7 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 bindsym $mod+F2 exec palemoon
 bindsym $mod+F3 exec pcmanfm
-# bindsym $mod+F3 exec ranger
+#bindsym $mod+F3 exec ranger
 bindsym $mod+Shift+F3 exec pcmanfm_pkexec
 bindsym $mod+F5 exec terminal -e 'mocp'
 bindsym $mod+t exec --no-startup-id pkill picom
@@ -294,7 +294,7 @@ exec --no-startup-id clipit
 # exec_always --no-startup-id sbxkb
 exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
-exec --no-startup-id xautolock -time 10 -locker blurlock
+exec --no-startup-id xautolock -time 60 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
