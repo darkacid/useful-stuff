@@ -1,4 +1,11 @@
-#... Manjaro stuff
+# Source manjaro-zsh-configuration
+if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
+  source /usr/share/zsh/manjaro-zsh-config
+fi
+# Use manjaro zsh prompt
+if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
+  source /usr/share/zsh/manjaro-zsh-prompt
+fi
 zstyle ':completion:::*:default' menu no select
 
 bindkey '^[f' emacs-forward-word
@@ -13,3 +20,8 @@ alias grep='grep --colour=auto'
 alias ls='ls --color=auto'
 alias more='less'
 alias np='nano -w PKGBUILD'
+
+setxkbmap -layout us,am,ru -variant ",phonetic-alt,"
+setxkbmap -option 'grp:alt_shift_toggle'
+
+export EDITOR=/usr/bin/vim
