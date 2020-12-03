@@ -27,7 +27,7 @@ font xft:URWGothic-Book 11
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec alacritty
 bindsym $mod+x exec "nemo ."
 bindsym $mod+g exec google-chrome-stable
 bindsym $mod+Shift+f exec "firefox -private

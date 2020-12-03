@@ -25,3 +25,4 @@ setxkbmap -layout us,am,ru -variant ",phonetic-alt,"
 setxkbmap -option 'grp:alt_shift_toggle'
 
 export EDITOR=/usr/bin/vim
+export TERM=xterm-256color
