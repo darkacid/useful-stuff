@@ -357,5 +357,8 @@ tmux_conf_copy_to_os_clipboard=false
 # "$@"
 # # /!\ do not remove the previous line
 #
+
 setw -g mouse on
 set -g default-terminal "xterm-256color"
+run-shell ~/.tmux/yank/yank.tmux
+
