@@ -30,7 +30,8 @@ floating_modifier $mod
 bindsym $mod+Return exec alacritty
 bindsym $mod+x exec "nemo ."
 bindsym $mod+g exec google-chrome-stable
-bindsym $mod+Shift+f exec "firefox -private
+bindsym $mod+Shift+f exec "firefox -private"
+bindsym $mod+Shift+s exec  maim -s -u ~/"$(date '+%Y-%m-%d-%H%M%S').png"
 bindsym $mod+w exec "/usr/local/bin/winbox"
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -124,7 +125,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # toggle sticky
-bindsym $mod+Shift+s sticky toggle
+#bindsym $mod+Shift+s sticky toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
