@@ -8,8 +8,8 @@ if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
 fi
 zstyle ':completion:::*:default' menu no select
 
-bindkey '^[f' emacs-forward-word
-bindkey '^[b' emacs-backward-word
+#bindkey '^[f' emacs-forward-word
+#bindkey '^[b' emacs-backward-word
 
 alias cp='cp -i'
 alias df='df -h'
@@ -20,9 +20,12 @@ alias grep='grep --colour=auto'
 alias ls='ls --color=auto'
 alias more='less'
 alias np='nano -w PKGBUILD'
+alias l='ls -lah'
 
 setxkbmap -layout us,am,ru -variant ",phonetic-alt,"
 setxkbmap -option 'grp:alt_shift_toggle'
 
 export EDITOR=/usr/bin/vim
 export TERM=xterm-256color
+
+source <(kubectl completion zsh)
