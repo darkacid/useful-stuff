@@ -1,0 +1,1 @@
+Enable "Force Composition Pipeline" in settings.
