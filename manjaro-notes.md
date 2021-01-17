@@ -9,3 +9,5 @@
 *   4. wine
 *   5. google-chrome
 *   6. alacritty
+*   7. noto-fonts-emoji
+
