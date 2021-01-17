@@ -27,12 +27,12 @@ font xft:URWGothic-Book 11
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
-bindsym $mod+x exec "nemo ."
-bindsym $mod+g exec google-chrome-stable
-bindsym $mod+Shift+f exec "firefox -private"
-bindsym $mod+Shift+s exec  maim -s -u ~/"$(date '+%Y-%m-%d-%H%M%S').png"
-bindsym $mod+w exec "/usr/local/bin/winbox"
+bindsym $mod+Return exec --no-startup-id alacritty
+bindsym $mod+x exec --no-startup-id "nemo ."
+bindsym $mod+g exec --no-startup-id google-chrome-stable
+bindsym $mod+Shift+f exec --no-startup-id  "firefox -private"
+bindsym $mod+Shift+s exec --no-startup-id  maim -s -u ~/"$(date '+%Y-%m-%d-%H%M%S').png"
+bindsym $mod+w exec --no-startup-id "/usr/local/bin/winbox"
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -47,7 +47,7 @@ bindsym $mod+z exec --no-startup-id morc_menu
 ################################################################################################
 
 exec --no-startup-id volumeicon
-bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
+bindsym $mod+Ctrl+m exec --no-startup-id terminal -e 'alsamixer'
 #exec --no-startup-id pulseaudio
 #exec --no-startup-id pa-applet
 #bindsym $mod+Ctrl+m exec pavucontrol
