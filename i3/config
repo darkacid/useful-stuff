@@ -32,7 +32,7 @@ bindsym $mod+x exec --no-startup-id "nemo ."
 bindsym $mod+g exec --no-startup-id google-chrome-stable
 bindsym $mod+Shift+f exec --no-startup-id  "firefox -private"
 bindsym $mod+Shift+s exec --no-startup-id  maim -s -u ~/"$(date '+%Y-%m-%d-%H%M%S').png"
-bindsym $mod+w exec --no-startup-id "/usr/local/bin/winbox"
+bindsym $mod+Shift+w exec --no-startup-id "/usr/local/bin/winbox"
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -114,9 +114,9 @@ bindsym $mod+v split v;exec notify-send 'tile vertically'
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-#bindsym $mod+s layout stacking
-#bindsym $mod+w layout tabbed
-#bindsym $mod+e layout toggle split
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
