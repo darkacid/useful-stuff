@@ -21,6 +21,7 @@ alias ls='ls --color=auto'
 alias more='less'
 alias np='nano -w PKGBUILD'
 alias l='ls -lah'
+alias ll='ls -lh'
 
 setxkbmap -layout us,am,ru -variant ",phonetic-alt,"
 setxkbmap -option 'grp:alt_shift_toggle'
