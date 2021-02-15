@@ -1,0 +1,5 @@
+HSP problem: audio is silent or skipping
+The packet size (a.k.a. MTU, "maximum transmission unit") that PulseAudio uses with the bluetooth HSP profile might be bad. By default PulseAudio configures the packet size to 48 bytes, but the adapter might require something else. Try passing "autodetect_mtu=yes" to module-bluetooth-discover in /etc/pulse/default.pa. That will make PulseAudio ask the kernel what the correct packet size is. The option is not enabled by default, because the kernel gives bad advice too often, while the default size of 48 bytes works better.
+
+
+
