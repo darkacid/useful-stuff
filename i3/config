@@ -33,7 +33,9 @@ bindsym $mod+g exec --no-startup-id google-chrome-stable
 bindsym $mod+Shift+f exec --no-startup-id  "firefox -private"
 bindsym $mod+Shift+s exec --no-startup-id  maim -s -u ~/"$(date '+%Y-%m-%d-%H%M%S').png"
 bindsym $mod+Shift+w exec --no-startup-id "/usr/local/bin/winbox"
-bindsym $mod+k exec --no-startup-id keepassxc
+bindsym $mod+equal [instance="keepassxc"] scratchpad show
+bindsym $mod+grave [instance="Alacritty"] scratchpad show
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
