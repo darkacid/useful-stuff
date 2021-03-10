@@ -19,3 +19,4 @@ endif
 
 set number
 set relativenumber
+colorscheme desert
