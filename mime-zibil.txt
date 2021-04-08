@@ -1,0 +1,3 @@
+xdg-mime default vim.desktop text/plain
+Delay when opening with vim.desktop ??
+
