@@ -10,4 +10,4 @@
 *   5. google-chrome
 *   6. alacritty
 *   7. noto-fonts-emoji
-
+Install clipit to handle PRIMARY and CLIPBOARD selections (Remember not to drop phases every time selecting text copies to PRIMARY).
