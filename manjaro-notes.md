@@ -12,3 +12,4 @@
 *   7. noto-fonts-emoji
 Install clipit to handle PRIMARY and CLIPBOARD selections (Remember not to drop phases every time selecting text copies to PRIMARY).
 Configure pacman color and animation (eating dots).
+Edit /usr/share/zsh/zsh-maia-prompt to remove stupid motd message (echo esiminch).

@@ -28,5 +28,6 @@ setxkbmap -option 'grp:alt_shift_toggle'
 
 export EDITOR=/usr/bin/vim
 export TERM=xterm-256color
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 source <(kubectl completion zsh)
