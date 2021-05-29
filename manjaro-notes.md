@@ -14,3 +14,8 @@ Install clipit to handle PRIMARY and CLIPBOARD selections (Remember not to drop 
 Configure pacman color and animation (eating dots).
 Edit /usr/share/zsh/zsh-maia-prompt to remove stupid motd message (echo esiminch).
 VLC: Disable single instance setting
+
+LXAppearence:
+    Default widget style - Adapta-nokto-eta-maia, default icon theme - Papirus-Adapta-Nokto-Maia
+    
+                
