@@ -29,6 +29,7 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec --no-startup-id alacritty
 bindsym $mod+x exec --no-startup-id "nemo ."
+bindsym $mod+r exec --no-startup-id "EDITOR=vim alacritty -e 'ranger'"
 bindsym $mod+g exec --no-startup-id google-chrome-stable
 bindsym $mod+b exec --no-startup-id brave
 bindsym $mod+Shift+f exec --no-startup-id  "firefox -private"
@@ -262,7 +263,7 @@ mode "$mode_system" {
 }
 
 # Resize window (you can also use the mouse for that)
-bindsym $mod+r mode "resize"
+bindsym $mod+ctrlrr mode "resize"
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
         # Pressing left will shrink the window’s width.
