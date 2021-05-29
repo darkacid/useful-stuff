@@ -8,8 +8,8 @@ if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
 fi
 zstyle ':completion:::*:default' menu no select
 
-#bindkey '^[f' emacs-forward-word
-#bindkey '^[b' emacs-backward-word
+bindkey '^[f' emacs-forward-word
+bindkey '^[b' emacs-backward-word
 
 alias cp='cp -i'
 alias df='df -h'
@@ -31,3 +31,8 @@ export TERM=xterm-256color
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 source <(kubectl completion zsh)
+export KUBECONFIG=$HOME/docs/kube-admin.conf
+alias k='kubectl'
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
