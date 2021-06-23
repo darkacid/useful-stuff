@@ -1,4 +1,4 @@
-
+#!/bin/bash
 i=0
 while [ True ] ;do
     result=$(xrandr --verbose | grep -i 960x540)
