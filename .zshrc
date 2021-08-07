@@ -8,6 +8,9 @@ if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
 fi
 zstyle ':completion:::*:default' menu no select
 
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+
 bindkey '^[f' emacs-forward-word
 bindkey '^[b' emacs-backward-word
 
@@ -23,7 +26,7 @@ alias np='nano -w PKGBUILD'
 alias l='ls -lah'
 alias ll='ls -lh'
 alias rr='ranger .'
-alias se='fzf --reverse'
+alias se='vim "$(fzf --reverse)"'
 
 setxkbmap -layout us,am,ru -variant ",phonetic-alt,"
 setxkbmap -option 'grp:alt_shift_toggle'
