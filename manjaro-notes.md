@@ -13,6 +13,7 @@
 *   8. i3blocks
 *   9. i3blocks-contrib (github)
 *   10. kbdd-git
+*   11. fzf (fuzzy search)
 
 Install clipit to handle PRIMARY and CLIPBOARD selections (Remember not to drop phases every time selecting text copies to PRIMARY).
 Configure pacman color and animation (eating dots).
