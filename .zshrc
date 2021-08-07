@@ -13,6 +13,7 @@ source /usr/share/fzf/completion.zsh
 
 bindkey '^[f' emacs-forward-word
 bindkey '^[b' emacs-backward-word
+unsetopt correct
 
 alias cp='cp -i'
 alias df='df -h'
