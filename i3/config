@@ -37,7 +37,7 @@ bindsym $mod+Shift+s exec --no-startup-id  maim -s -u ~/screenshots/"$(date '+%Y
 bindsym $mod+Shift+w exec --no-startup-id "/usr/local/bin/winbox"
 bindsym $mod+equal [instance="keepassxc"] scratchpad show
 bindsym $mod+grave [instance="Alacritty"] scratchpad show
-bindsym $mod+Escape exec --no-startup-id "alacritty -e fzf --reverse|xargs -o vim"
+bindsym $mod+Escape exec --no-startup-id alacritty -t fzf -e fzf --reverse
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -236,6 +236,7 @@ for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
 for_window [class="KeePassXC"] floating enable
 for_window [class="Gvim"] floating enable
+for_window [title="fzf"] floating enable
 
 # switch to workspace with urgent window automatically
 #for_window [urgent=latest] focus
