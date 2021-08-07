@@ -37,7 +37,7 @@ bindsym $mod+Shift+s exec --no-startup-id  maim -s -u ~/screenshots/"$(date '+%Y
 bindsym $mod+Shift+w exec --no-startup-id "/usr/local/bin/winbox"
 bindsym $mod+equal [instance="keepassxc"] scratchpad show
 bindsym $mod+grave [instance="Alacritty"] scratchpad show
-
+bindsym $mod+Escape exec --no-startup-id "alacritty -e fzf --reverse"
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -203,6 +203,9 @@ bindsym $mod+Shift+0 move container to workspace $ws10; workspace $ws10
 # assign [class="Pcmanfm"] $ws3
 # assign [class="Skype"] $ws5
 
+assign [class="Slack"] $ws10
+assign [class="Telegram"] $ws10
+
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
 for_window [class="calamares"] floating enable border normal
@@ -232,6 +235,7 @@ for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
 for_window [class="KeePassXC"] floating enable
+for_window [class="Gvim"] floating enable
 
 # switch to workspace with urgent window automatically
 #for_window [urgent=latest] focus

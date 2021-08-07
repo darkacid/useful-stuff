@@ -23,6 +23,7 @@ alias np='nano -w PKGBUILD'
 alias l='ls -lah'
 alias ll='ls -lh'
 alias rr='ranger .'
+alias se='fzf --reverse'
 
 setxkbmap -layout us,am,ru -variant ",phonetic-alt,"
 setxkbmap -option 'grp:alt_shift_toggle'
