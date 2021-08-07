@@ -22,17 +22,20 @@ alias more='less'
 alias np='nano -w PKGBUILD'
 alias l='ls -lah'
 alias ll='ls -lh'
+alias rr='ranger .'
 
 setxkbmap -layout us,am,ru -variant ",phonetic-alt,"
 setxkbmap -option 'grp:alt_shift_toggle'
+xset r rate 300 50
+setxkbmap -option caps:escape
 
 export EDITOR=/usr/bin/vim
 export TERM=xterm-256color
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 source <(kubectl completion zsh)
-export KUBECONFIG=$HOME/docs/kube-admin.conf
-alias k='kubectl'
+#export KUBECONFIG=$HOME/docs/kube-admin.conf
+alias kubectl='kubectl --kubeconfig $HOME/docs/kube-admin.conf'
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
