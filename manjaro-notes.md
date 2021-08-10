@@ -14,7 +14,8 @@
 *   9. i3blocks-contrib (github)
 *   10. kbdd-git
 *   11. fzf (fuzzy search)
-*   12. Uninstall pulseaudio, replace with pipewire-pulse
+*   ? 12. Uninstall pulseaudio, replace with pipewire-pulse
+*   13. Add user to video group for xbacklight non-sudo
 
 Install clipit to handle PRIMARY and CLIPBOARD selections (Remember not to drop phases every time selecting text copies to PRIMARY).
 Configure pacman color and animation (eating dots).
