@@ -40,8 +40,9 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export BROWSER=google-chrome-stable
 
 source <(kubectl completion zsh)
+source <(k3d completion zsh)
 #export KUBECONFIG=$HOME/docs/kube-admin.conf
-alias kubectl='kubectl --kubeconfig $HOME/docs/kube-admin.conf'
+#alias kubectl='kubectl --kubeconfig $HOME/docs/kube-admin.conf'
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
