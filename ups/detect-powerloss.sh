@@ -6,7 +6,7 @@ while [ True ] ;do
         #Secondary monitor off - power loss
         echo "$i"
         i=$((i+1))
-        if [ $i -ge 90 ];then
+        if [ $i -ge 30 ];then
             #Suspend after 15 minutes
             i=0
             systemctl suspend;
