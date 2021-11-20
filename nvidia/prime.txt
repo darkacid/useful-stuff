@@ -1,0 +1,3 @@
+https://wiki.archlinux.org/title/PRIME#PCI-Express_Runtime_D3_(RTD3)_Power_Management
+cat /sys/bus/pci/devices/0000:01:00.0/power/runtime_status
+cat /proc/driver/nvidia/gpus/0000:01:00.0/power
