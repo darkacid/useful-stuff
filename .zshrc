@@ -44,5 +44,9 @@ source <(k3d completion zsh)
 #export KUBECONFIG=$HOME/docs/kube-admin.conf
 #alias kubectl='kubectl --kubeconfig $HOME/docs/kube-admin.conf'
 
+#AWS CLI autocomplete
+autoload bashcompinit && bashcompinit
+complete -C '/usr/local/bin/aws_completer' aws
+
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
