@@ -7,9 +7,9 @@ while [ True ] ;do
         echo "$i"
         i=$((i+1))
         if [ $i -ge 30 ];then
-            #Suspend after 15 minutes
+            #Suspend after 5 minutes
             i=0
-            systemctl suspend;
+            systemctl halt;
         fi
     else
         i=0
