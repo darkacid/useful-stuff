@@ -29,7 +29,7 @@ alias ll='ls -lh'
 alias rr='ranger .'
 alias se='vim "$(fzf --reverse)"'
 
-setxkbmap -layout us,am,ru -variant ",phonetic-alt,"
+setxkbmap -layout us,am,ru -variant ",phonetic-alt,phonetic"
 setxkbmap -option 'grp:alt_shift_toggle'
 xset r rate 300 50
 setxkbmap -option caps:escape
