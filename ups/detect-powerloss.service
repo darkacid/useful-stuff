@@ -4,7 +4,7 @@ Description=Detect Powerloss
 [Service]
 Type=simple
 ExecStart=/home/serg/src/useful-stuff/ups/detect-powerloss.sh
-ExecStartPre=/bin/sleep 120
+ExecStartPre=/bin/sleep 60
 
 [Install]
 WantedBy=default.target
