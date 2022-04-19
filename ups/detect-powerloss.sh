@@ -6,7 +6,7 @@ while [ True ] ;do
         #Secondary monitor off - power loss
         echo "$i"
         i=$((i+1))
-        if [ $i -ge 2 ];then
+        if [ $i -ge 300 ];then
             #Shutdown after 5 minutes
             i=0
             python /home/serg/src/useful-stuff/ups/vm-shutdown.py
