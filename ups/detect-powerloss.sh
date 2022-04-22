@@ -6,10 +6,11 @@ while [ True ] ;do
         #Secondary monitor off - power loss
         echo "$i"
         i=$((i+1))
-        if [ $i -ge 30 ];then
-            #Suspend after 15 minutes
+        if [ $i -ge 300 ];then
+            #Shutdown after 5 minutes
             i=0
-            systemctl suspend;
+            python /home/serg/src/useful-stuff/ups/vm-shutdown.py
+            shutdown now;
         fi
     else
         i=0
