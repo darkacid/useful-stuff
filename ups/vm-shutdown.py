@@ -14,6 +14,7 @@ for i in range(0,3):
         exit (0)
     sleep(15)
 sleep(5)
-if domain.isActive() == 1:
-    domain.destroy()
+for domain in a:
+    if domain.isActive() == 1:
+        domain.destroy()
 sleep(5)
