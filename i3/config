@@ -35,8 +35,14 @@ bindsym $mod+b exec --no-startup-id brave
 bindsym $mod+Shift+f exec --no-startup-id  "firefox -private"
 bindsym $mod+Shift+s exec --no-startup-id  maim -s -u ~/screenshots/"$(date '+%Y-%m-%d-%H%M%S').png"
 bindsym $mod+Shift+w exec --no-startup-id "/usr/local/bin/winbox"
+
+exec --no-startup-id keepassxc
+for_window [instance="keepassxc"] move scratchpad
 bindsym $mod+equal [instance="keepassxc"] scratchpad show
-bindsym $mod+grave [instance="Alacritty"] scratchpad show
+exec --no-startup-id alacritty --class alacritty-scratch  -e tmux new-session -A -s scratch
+for_window [instance="alacritty-scratch"] move scratchpad
+bindsym $mod+grave [instance="alacritty-scratch"] scratchpad show
+
 bindsym $mod+Escape exec --no-startup-id alacritty -t fzf -e fzf --reverse
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -141,7 +147,7 @@ bindsym $mod+Shift+minus move scratchpad
 
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
-bindsym $mod+minus [instance="^(?!Alacritty)(?!keepassxc).*"] scratchpad show
+bindsym $mod+minus [instance="^(?!alacritty-.*)(?!keepassxc).*"] scratchpad show
 
 #navigate workspaces next / previous
 bindsym $mod+Tab workspace next
