@@ -29,7 +29,6 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec --no-startup-id alacritty
 bindsym $mod+x exec --no-startup-id "nemo ."
-bindsym $mod+r exec --no-startup-id "remmina"
 bindsym $mod+g exec --no-startup-id google-chrome-stable
 bindsym $mod+b exec --no-startup-id brave
 bindsym $mod+Shift+f exec --no-startup-id  "firefox -private"
@@ -42,6 +41,10 @@ bindsym $mod+equal [instance="keepassxc"] scratchpad show
 exec --no-startup-id alacritty --class alacritty-scratch  -e tmux new-session -A -s scratch
 for_window [instance="alacritty-scratch"] move scratchpad
 bindsym $mod+grave [instance="alacritty-scratch"] scratchpad show
+
+exec --no-startup-id remmina
+for_window [Title="Remmina Remote Desktop Client"] move scratchpad
+bindsym $mod+r [instance="remmina"] scratchpad show
 
 bindsym $mod+Escape exec --no-startup-id alacritty -t fzf -e fzf --reverse
 # kill focused window
