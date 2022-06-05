@@ -19,3 +19,13 @@ ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x03[0-9]
 
 Remove custom 80-nvidia-pm, and 90-mhwd power management settings
 Result -> lspci doesn't show nvidia gpu. power management still works. Driver not loaded.
+
+
+# Disabled NVIDIA gpu ^^^, crashes persist. Main cause is the intel driver
+
+##  Add to grub, fastboot seems to have fixed crashes (only happen when on DC power, when on battery everything is fine)
+i915.edp_vswing=2 i915.fastboot=0, 
+
+# Comment out
+# i915.enable_psr=0 # Removed, enabled if flickering
+# intel_idle.max_cstate=1
