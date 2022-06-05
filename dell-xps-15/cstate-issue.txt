@@ -23,9 +23,16 @@ Result -> lspci doesn't show nvidia gpu. power management still works. Driver no
 
 # Disabled NVIDIA gpu ^^^, crashes persist. Main cause is the intel driver
 
-##  Add to grub, fastboot seems to have fixed crashes (only happen when on DC power, when on battery everything is fine)
-i915.edp_vswing=2 i915.fastboot=0, 
+# DRI3 causes the crash, setting DRI2 finally fixes the issue. (old xf86-video-intel package). Modesetting driver still crashes under DRI3.
+# Using DRI2 is significantly worse than max_cstate=1, since it produces much heat and results in worse battery life.
+# No messing with grub/Early KMS fixed the issue.
+# Only workaround is intel_idle.max_cstate=1
 
-# Comment out
-# i915.enable_psr=0 # Removed, enabled if flickering
-# intel_idle.max_cstate=1
+# Tried in many combinations the following: 
+    intel_iommu=on/off
+    i915.enable_guc=0/2
+    i915.fastboot=0/1
+    i915.enable_dc=0
+    ahci.mobile_lpm_policy=1
+    i915.edp_vswing=2
+    i915.enable_psr=0 
