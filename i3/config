@@ -36,6 +36,7 @@ bindsym $mod+Shift+f exec --no-startup-id  "firefox -private"
 bindsym $mod+Shift+s exec --no-startup-id  maim -s -u ~/screenshots/"$(date '+%Y-%m-%d-%H%M%S').png"
 bindsym $mod+Shift+w exec --no-startup-id "/usr/local/bin/winbox"
 
+exec --no-startup-id ticktick
 exec --no-startup-id keepassxc
 for_window [instance="keepassxc"] move scratchpad
 bindsym $mod+equal [instance="keepassxc"] scratchpad show
@@ -216,6 +217,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10; workspace $ws10
 
 assign [class="Slack"] $ws10
 assign [class="Telegram"] $ws10
+assign [class="ticktick"] $ws9
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
