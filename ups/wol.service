@@ -1,0 +1,9 @@
+[Unit]
+Description=Python WOL service
+
+[Service]
+Type=simple
+ExecStart=/home/darkacid/src/useful-stuff/ups/wol.py
+
+[Install]
+WantedBy=default.target
