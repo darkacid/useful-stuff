@@ -29,7 +29,7 @@ alias ll='ls -lh'
 alias rr='ranger .'
 alias se='vim "$(fzf --reverse)"'
 
-if [ ! -n "$DISPLAY" ]
+if [ ! -z "$DISPLAY" ]
 then
     setxkbmap -layout us,am,ru -variant ",phonetic-alt,phonetic"
     setxkbmap -option 'grp:alt_shift_toggle'
