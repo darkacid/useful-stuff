@@ -25,7 +25,7 @@ alias ls='ls --color=auto'
 alias more='less'
 alias np='nano -w PKGBUILD'
 alias l='ls -lah'
-alias ll='ls -lh'
+alias ll='ls -lah'
 alias rr='ranger .'
 alias se='vim "$(fzf --reverse)"'
 
@@ -51,3 +51,6 @@ autoload bashcompinit && bashcompinit
 complete -C '/usr/local/bin/aws_completer' aws
 
 alias kubectl='\kubectl'
+alias kai='cd ~/src/krisp/krisp-automation-infra'
+
+export HISTSIZE=100000
