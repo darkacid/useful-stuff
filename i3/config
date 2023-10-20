@@ -30,7 +30,7 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec --no-startup-id alacritty
 bindsym $mod+x exec --no-startup-id "nemo ."
-bindsym $mod+g exec --no-startup-id google-chrome-stable
+bindsym $mod+g exec --no-startup-id "env GTK_THEME=Adwaita:light google-chrome-stable"
 bindsym $mod+b exec --no-startup-id brave
 bindsym $mod+Shift+f exec --no-startup-id  "env GTK_THEME=Adwaita:light firefox --private-window"
 bindsym $mod+Shift+s exec --no-startup-id  maim -s -u ~/screenshots/"$(date '+%Y-%m-%d-%H%M%S').png"
