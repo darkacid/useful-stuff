@@ -27,13 +27,14 @@ alias np='nano -w PKGBUILD'
 alias l='ls -lah'
 alias ll='ls -lah'
 alias rr='ranger .'
+alias cat='bat'
 alias se='vim "$(fzf --reverse)"'
 
 if [ ! -z "$DISPLAY" ]
 then
     setxkbmap -layout us,am,ru -variant ",phonetic-alt,phonetic"
     setxkbmap -option 'grp:alt_shift_toggle'
-    xset r rate 300 50
+    xset r rate 200 50
     setxkbmap -option caps:escape
 fi 
 export EDITOR=/usr/bin/vim
