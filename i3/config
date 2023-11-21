@@ -40,6 +40,7 @@ exec --no-startup-id ticktick
 exec --no-startup-id keepassxc
 exec --no-startup-id slack
 exec --no-startup-id telegram-desktop
+exec --no-startup-id thunderbird
 
 for_window [instance="keepassxc"] move scratchpad
 bindsym $mod+equal [instance="keepassxc"] scratchpad show
@@ -222,6 +223,8 @@ bindsym $mod+Shift+0 move container to workspace $ws10; workspace $ws10
 assign [class="Slack"] $ws10
 assign [class="Telegram"] $ws10
 assign [class="ticktick"] $ws9
+assign [class="Thunderbird"] $ws7
+
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
