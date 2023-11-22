@@ -27,7 +27,9 @@ alias np='nano -w PKGBUILD'
 alias l='ls -lah'
 alias ll='ls -lah'
 alias rr='ranger .'
-alias cat='bat'
+alias cat='bat -p'
+alias ssa="ss -ptuln|column -t"
+alias vim="lvim"
 alias se='vim "$(fzf --reverse)"'
 
 if [ ! -z "$DISPLAY" ]
@@ -55,3 +57,4 @@ alias kubectl='\kubectl'
 alias kai='cd ~/src/krisp/krisp-automation-infra'
 
 export HISTSIZE=100000
+eval "$(zoxide init zsh)"
