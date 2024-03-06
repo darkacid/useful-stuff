@@ -31,6 +31,7 @@ alias cat='bat -p'
 alias ssa="ss -ptuln|column -t"
 alias vim="lvim"
 alias se='vim "$(fzf --reverse)"'
+alias cd='z'
 
 if [ ! -z "$DISPLAY" ]
 then
