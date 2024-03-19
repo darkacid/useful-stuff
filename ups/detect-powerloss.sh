@@ -1,20 +1,14 @@
 #!/bin/bash
-i=0
+HOST="ups.unbound.am:7433"
+echo "Starting monitoring host $HOST for commands"
 while [ True ] ;do
-    result=$(xrandr --verbose | grep -i 960x540)
-    if [ ! -z "$result" ];then
-        #Secondary monitor off - power loss
-        echo "$i"
-        i=$((i+1))
-        if [ $i -ge 6 ];then
-            #Shutdown after 5 minutes
-            i=0
-            python /home/serg/src/useful-stuff/ups/vm-shutdown.py
-            shutdown now;
-        fi
-    else
-        i=0
+    result=$(curl $HOST)
+    if [ "$result" == "shutdown" ];then
+        echo "Initiating shutdown"
+        python /home/serg/src/useful-stuff/ups/vm-shutdown.py
+        shutdown now;
+    elif [ "$result" != "normal" ];then
+        echo "$result"
     fi
-
-    sleep 10
+    sleep 5;
 done
