@@ -77,8 +77,8 @@ bindsym $mod+Ctrl+p exec --no-startup-id  'pavucontrol'
 ################################################################################################
 
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send --expire-time=400 Brightness $(printf %.0f%% $(xbacklight -get))"
-bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send --expire-time=400 Brightness $(printf %.0f%% $(xbacklight -get))"
+bindsym XF86MonBrightnessUp exec "light -A 10; notify-send --expire-time=400 Brightness $(printf %.0f%% $(light))"
+bindsym XF86MonBrightnessDown exec "light -U 10; notify-send --expire-time=400 Brightness $(printf %.0f%% $(light))"
 
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
@@ -87,8 +87,8 @@ bindsym $mod+F3 exec pcmanfm
 #bindsym $mod+F3 exec ranger
 bindsym $mod+Shift+F3 exec pcmanfm_pkexec
 bindsym $mod+F5 exec terminal -e 'mocp'
-bindsym $mod+t exec --no-startup-id pkill picom
-bindsym $mod+Ctrl+t exec --no-startup-id picom -b
+#bindsym $mod+t exec --no-startup-id pkill picom
+#bindsym $mod+Ctrl+t exec --no-startup-id picom -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
@@ -317,7 +317,7 @@ bindsym $mod+l exec --no-startup-id blurlock
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id nitrogen --restore; sleep 1; picom -b
+exec --no-startup-id nitrogen --restore; sleep 1 # picom -b
 #exec --no-startup-id manjaro-hello
 exec --no-startup-id nm-applet
 #Modify for Notebook
@@ -326,7 +326,7 @@ exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
-exec --no-startup-id start_conky_maia
+#exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
 exec --no-startup-id xautolock -time 60 -locker blurlock
 exec_always --no-startup-id ff-theme-util

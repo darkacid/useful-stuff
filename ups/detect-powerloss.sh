@@ -2,7 +2,7 @@
 HOST="ups.unbound.am:7433"
 echo "Starting monitoring host $HOST for commands"
 while [ True ] ;do
-    result=$(curl $HOST)
+    result=$(curl -s $HOST)
     if [ "$result" == "shutdown" ];then
         echo "Initiating shutdown"
         python /home/serg/src/useful-stuff/ups/vm-shutdown.py
