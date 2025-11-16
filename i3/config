@@ -49,6 +49,8 @@ exec --no-startup-id setxkbmap -layout us,am,ru -variant ",phonetic-alt,phonetic
 # Set key repeat rate
 exec --no-startup-id xset r rate 200 50
 
+exec --no-startup-id xcalib -d :0 -s 0 -v  ~/.color/icc/LEN403D_01.icm
+
 
 for_window [instance="keepassxc"] move scratchpad
 bindsym $mod+equal [instance="keepassxc"] scratchpad show
