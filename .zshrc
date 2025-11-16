@@ -6,6 +6,8 @@ fi
 if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
   source /usr/share/zsh/manjaro-zsh-prompt
 fi
+#ZSHRC_LOAD_START_1=$EPOCHREALTIME
+
 zstyle ':completion:::*:default' menu no select
 
 source /usr/share/fzf/key-bindings.zsh
@@ -25,37 +27,49 @@ alias ls='ls --color=auto'
 alias more='less'
 alias np='nano -w PKGBUILD'
 alias l='ls -lah'
-alias ll='ls -lah'
+alias ll='ls -lahrt'
 alias rr='ranger .'
 alias cat='bat -p'
 alias ssa="ss -ptuln|column -t"
-alias vim="lvim"
+alias vim="nvim"
 alias se='vim "$(fzf --reverse)"'
 alias cd='z'
-
-if [ ! -z "$DISPLAY" ]
-then
-    setxkbmap -layout us,am,ru -variant ",phonetic-alt,phonetic"
-    setxkbmap -option 'grp:alt_shift_toggle'
-    xset r rate 200 50
-    setxkbmap -option caps:escape
-fi 
+#
+#if [ ! -z "$DISPLAY" ]
+#then
+#    setxkbmap -layout us,am,ru -variant ",phonetic-alt,phonetic"
+#    setxkbmap -option 'grp:win_space_toggle'
+#    xset r rate 200 50
+#    setxkbmap -option caps:escape
+#fi 
 export EDITOR=/usr/bin/vim
 export TERM=xterm-256color
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export BROWSER=google-chrome-stable
 
-source <(kubectl completion zsh)
-source <(k3d completion zsh)
-#export KUBECONFIG=$HOME/docs/kube-admin.conf
-#alias kubectl='kubectl --kubeconfig $HOME/docs/kube-admin.conf'
 
 #AWS CLI autocomplete
 autoload bashcompinit && bashcompinit
 complete -C '/usr/local/bin/aws_completer' aws
 
-alias kubectl='\kubectl'
 alias kai='cd ~/src/krisp/krisp-automation-infra'
+alias koi='cd ~/src/krisp/krisp-onprem-infra'
+alias dcls='docker container ls -a'
+alias wg2='sudo wg-quick up wg2'
+alias wg1='sudo wg-quick up wg1'
+
 
 export HISTSIZE=100000
 eval "$(zoxide init zsh)"
+GPG_TTY=$(tty)
+export GPG_TTY
+#
+eval "$(pyenv init - zsh)"
+export PATH=$PATH:~/.cargo/bin/
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+source /usr/share/nvm/init-nvm.sh
+
+#ZSHRC_LOAD_END=$EPOCHREALTIME
+#ZSHRC_LOAD_TIME=$(( ZSHRC_LOAD_END - ZSHRC_LOAD_START_1 ))
+#printf "⏱️ .zshrc loaded in %.3f seconds\n" "$ZSHRC_LOAD_TIME"
