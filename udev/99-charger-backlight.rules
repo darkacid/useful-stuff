@@ -1,0 +1,3 @@
+SUBSYSTEM=="power_supply",ENV{POWER_SUPPLY_ONLINE}=="0",RUN+="/bin/bash -c 'echo 0 > /sys/class/leds/tpacpi::kbd_backlight/brightness'"
+SUBSYSTEM=="power_supply",ENV{POWER_SUPPLY_ONLINE}=="1",RUN+="/bin/bash -c 'echo 2 > /sys/class/leds/tpacpi::kbd_backlight/brightness'"
+
