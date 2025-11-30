@@ -42,6 +42,8 @@ exec --no-startup-id ticktick
 exec --no-startup-id keepassxc
 exec --no-startup-id slack
 exec --no-startup-id Telegram
+exec --no-startup-id "polybar mainbar"
+exec --no-startup-id "cd .i3 && bash i3-auto-monitor-layout.sh"
 
 # Set keyboard layouts, toggle with Left Alt + Shift, and remap Caps Lock to Escape
 exec --no-startup-id setxkbmap -layout us,am,ru -variant ",phonetic-alt,phonetic" -option 'grp:alt_shift_toggle' -option caps:escape
@@ -49,7 +51,7 @@ exec --no-startup-id setxkbmap -layout us,am,ru -variant ",phonetic-alt,phonetic
 # Set key repeat rate
 exec --no-startup-id xset r rate 200 50
 
-exec --no-startup-id xcalib -d :0 -s 0 -v  ~/.color/icc/LEN403D_01.icm
+exec --no-startup-id xcalib -d :0 -s 0 -v  ~/.color/icc/LEN403D.icm
 
 
 for_window [instance="keepassxc"] move scratchpad
@@ -77,18 +79,20 @@ bindsym $mod+z exec --no-startup-id morc_menu
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
 ################################################################################################
 
-exec --no-startup-id volumeicon
-bindsym $mod+Ctrl+m exec --no-startup-id terminal -e 'alsamixer'
+#exec --no-startup-id volumeicon
 bindsym $mod+Ctrl+p exec --no-startup-id  'pavucontrol'
-#exec --no-startup-id pulseaudio
-#exec --no-startup-id pa-applet
-#bindsym $mod+Ctrl+m exec pavucontrol
 
 ################################################################################################
 
 # Screen brightness controls
 bindsym XF86MonBrightnessUp exec "light -A 10; notify-send --expire-time=400 Brightness $(printf %.0f%% $(light))"
 bindsym XF86MonBrightnessDown exec "light -U 10; notify-send --expire-time=400 Brightness $(printf %.0f%% $(light))"
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec --no-startup-id "pactl -- set-sink-mute @DEFAULT_SINK@ toggle"
+
+
 
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
@@ -375,36 +379,39 @@ set_from_resource $term_color14    color14
 set_from_resource $term_color15    color15
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
-bar {
-	i3bar_command i3bar
-	status_command SCRIPT_DIR=~/.config/i3blocks i3blocks
-	position bottom
-
-## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-	tray_output primary
-#	tray_output eDP1
-
-	bindsym button4 nop
-	bindsym button5 nop
-#   font xft:URWGothic-Book 11
-	strip_workspace_numbers yes
-
-    colors {
-        background #222D31
-        statusline #F9FAF9
-        separator  #454947
-
-#                      border  backgr. text
-        focused_workspace  #F9FAF9 #16a085 #292F34
-        active_workspace   #595B5B #353836 #FDF6E3
-        inactive_workspace #595B5B #222D31 #EEE8D5
-        binding_mode       #16a085 #2C2C2C #F9FAF9
-        urgent_workspace   #16a085 #FDF6E3 #E5201D
-    }
-}
-
-# hide/unhide i3status bar
-bindsym $mod+m bar mode toggle
+# Migrate to polybar
+#bar {
+#	i3bar_command i3bar
+#	#i3bar_command i3bar
+#	#status_command i3status-rs ~/.config/i3status-rs/config.toml
+#	status_command SCRIPT_DIR=~/.config/i3blocks i3blocks
+#	position bottom
+#
+### please set your primary output first. Example: 'xrandr --output eDP1 --primary'
+#	tray_output primary
+##	tray_output eDP1
+#
+#	bindsym button4 nop
+#	bindsym button5 nop
+##   font xft:URWGothic-Book 11
+#	strip_workspace_numbers yes
+#
+#    colors {
+#        background #222D31
+#        statusline #F9FAF9
+#        separator  #454947
+#
+##                      border  backgr. text
+#        focused_workspace  #F9FAF9 #16a085 #292F34
+#        active_workspace   #595B5B #353836 #FDF6E3
+#        inactive_workspace #595B5B #222D31 #EEE8D5
+#        binding_mode       #16a085 #2C2C2C #F9FAF9
+#        urgent_workspace   #16a085 #FDF6E3 #E5201D
+#    }
+#}
+#
+## hide/unhide i3status bar
+#bindsym $mod+m bar mode toggle
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border

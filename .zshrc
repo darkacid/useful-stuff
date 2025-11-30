@@ -34,6 +34,7 @@ alias ssa="ss -ptuln|column -t"
 alias vim="nvim"
 alias se='vim "$(fzf --reverse)"'
 alias cd='z'
+alias pu='git'
 #
 #if [ ! -z "$DISPLAY" ]
 #then
@@ -48,9 +49,10 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export BROWSER=google-chrome-stable
 
 
+
 #AWS CLI autocomplete
-autoload bashcompinit && bashcompinit
-complete -C '/usr/local/bin/aws_completer' aws
+#autoload bashcompinit && bashcompinit
+#complete -C '/usr/local/bin/aws_completer' aws
 
 alias kai='cd ~/src/krisp/krisp-automation-infra'
 alias koi='cd ~/src/krisp/krisp-onprem-infra'
